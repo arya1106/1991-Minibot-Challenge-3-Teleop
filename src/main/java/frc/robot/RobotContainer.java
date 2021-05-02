@@ -100,7 +100,7 @@ public class RobotContainer {
     // Setup SmartDashboard options
     m_chooser.setDefaultOption("Line Following", this.getLineFollowerCommand());
     m_chooser.addOption("Auto Routine Time", new AutonomousTime(m_drivetrain));
-    m_drivetrain.setDefaultCommand(getLineFollowerCommand());
+    m_drivetrain.setDefaultCommand(getArcadeDriveCommand());
     SmartDashboard.putData(m_chooser);
   }
 
@@ -124,6 +124,6 @@ public class RobotContainer {
    */
   public Command getArcadeDriveCommand() {
     return new ArcadeDrive(
-        m_drivetrain, () -> -m_controller.getRawAxis(1), () -> m_controller.getRawAxis(2));
+        m_drivetrain, () -> 0.7*m_controller.getRawAxis(1), () -> 0.7*m_controller.getRawAxis(2));
   }
 }

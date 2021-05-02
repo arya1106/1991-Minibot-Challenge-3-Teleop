@@ -10,16 +10,14 @@ public class CaptureBall extends SequentialCommandGroup {
         if(ballCount == 1){
             addCommands(
                 new DriveDistance(-1, 6, drivetrain),
-                new TurnDegrees(0.5, 163, drivetrain),
-                new DriveDistance(-0.8, 5, drivetrain)
+                new TurnDegrees(0.5, 163, drivetrain)
             );
         }
         else if(ballCount == 2){
             addCommands(
                 new DriveDistance(-1, 6, drivetrain),
                 new TurnDegrees(-0.5, 166, drivetrain),
-                new DriveDistance(-0.6, 4, drivetrain),
-                new DriveArc(-0.6, 17, 13, drivetrain)
+                new DriveDistance(-0.6, 4, drivetrain)
             );
         }
         else if(ballCount == 3){
@@ -27,8 +25,7 @@ public class CaptureBall extends SequentialCommandGroup {
                 new DriveDistance(-1, 4, drivetrain),
                 new TurnDegrees(0.5, 180, drivetrain),
                 new DriveArc(-0.8, 17, 8, drivetrain),
-                new DriveDistance(-0.8, 3.25, drivetrain),
-                new KillDrive(drivetrain)
+                new DriveDistance(-0.8, 3.25, drivetrain)
             );
         }
     }
